@@ -1,0 +1,12 @@
+# First we do a full compile
+> compile
+
+# Now simulate adding a method to a controller
+$ copy-file changes/controllerchange/controllers/Resource1.scala src/main/scala/controllers/Resource1.scala
+> compile
+
+# Now simulate adding a new route to the routes file
+$ copy-file changes/routeschange/routes_reverseRouting.scala src/main/scala-generated/routes_reverseRouting.scala
+$ copy-file changes/routeschange/routes_routing.scala src/main/scala-generated/routes_routing.scala
+$ copy-file changes/routeschange/controllers/routes.java src/main/scala-generated/controllers/routes.java
+> compile
